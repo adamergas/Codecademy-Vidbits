@@ -1,0 +1,17 @@
+<div>
+  <h2 class="form-title">Save a Video</h2>
+  <form class="input-form" action="/videos" method="post" >
+    <label class="form-label" for="title">Title</label>
+    <input id="title-input" name="title" type="text">
+    {{#if error}}
+      <div class="error">{{error}}</div>
+    {{/if}}
+    <label class="form-label" for="videoUrl">Image Url</label>
+    <input id="videoUrl-input" name="videoUrl" type="text">
+    <label class="form-label" for="description">Description</label>
+    <textarea id="description-input" name="description">{{video.description}}</textarea>
+    <button class="button submit-button" id="submit-button" type="submit">
+      <p>Save</p>
+    </button>
+  </form>
+</div>
