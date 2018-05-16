@@ -10,6 +10,6 @@ To make this application work:
 To run the tests:
 1. open another command window, navigate to file directory and 'npm run test'
 
-Notes
-I separated some of the tests into separate, appropriately named files.
-There seemed to be several typos in the follow-along steps, I proceeded how I assumed the directions meant. 
+Notes:
+1. I separated some of the tests into separate, appropriately named files.
+2. There seemed to be several typos in the follow-along steps, I proceeded how I assumed the directions meant. 
