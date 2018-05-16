@@ -1,8 +1,8 @@
 const {assert} = require('chai');
 
-describe('When visiting /videos/create', () => {
-  describe('user can post new video', () => {
-    it('and renders the new video on the landing page', () => {
+describe('When visiting /videos/deletions', () => {
+  describe('user can delete video', () => {
+    it('and the video is removed from the list', () => {
       const newVid = {
         title: 'Funny Video',
         videoUrl: 'https://www.youtube.com/watch?v=AdYaTa_lOf4',
@@ -15,8 +15,10 @@ describe('When visiting /videos/create', () => {
       browser.setValue('#videoUrl-input', newVid.videoUrl);
       browser.click('#submit-button');
 
-      assert.include(browser.getText('body'), newVid.title);
-      assert.include(browser.getText('body'), newVid.description);
-    })
+      browser.click('#delete');
+
+      assert.notInclude(browser.getText('body'), newVid.title, 'deleted video is not in the list.');
+
+    });
   });
 });

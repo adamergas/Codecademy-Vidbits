@@ -7,7 +7,22 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
-    <h1 id="video-title">{{video.title}}</h1>
-    <p id="video-description">{{video.description}}</p>
+    <div id="contents-container">
+      <div id="video-card">
+        <div id="video-title">
+          <h1>{{video.title}}</h1>
+        </div>
+        <iframe class="video-player" src="{{video.videoUrl}}" frameborder="0" allowfullscreen></iframe>
+        <div id="video-description">
+          <p>{{video.description}}</p>
+        </div>
+      </div>
+    </div>
+    <form class="edit-link" action="/videos/{{video._id}}/edit" method="get">
+      <button class="button edit-button" id="edit-button" type="submit" >Edit</button>
+    </form>
+    <form class="delete-link" action="/videos/{{video._id}}/deletions" method="post">
+      <button class="button delete" id="delete" type="submit" >Delete</button>
+    </form>
   </body>
 </html>

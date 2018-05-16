@@ -1,6 +1,6 @@
 <div>
-  <h2 class="form-title">Save a Video</h2>
-  <form class="input-form" action="/videos" method="post" >
+  <h2 class="form-title">Edit a Video</h2>
+  <form class="input-form" action="/videos/{{video._id}}/updates" method="post" >
     <label class="form-label" for="title">Title</label>
     <input id="title-input" name="title" type="text" value="{{video.title}}">
     {{#if error.title}}
@@ -14,9 +14,7 @@
       <div class="error">{{error.videoUrl}}</div>
     {{/if}}
     <button class="button submit-button" id="submit-button" type="submit">
-      <p>Save</p>
+      <p>Edit</p>
     </button>
   </form>
-  
-
 </div>

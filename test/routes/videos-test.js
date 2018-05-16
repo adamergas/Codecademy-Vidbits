@@ -9,7 +9,7 @@ const {connectDatabase, disconnectDatabase} = require('../database-utilities');
 const {parseTextFromHTML} = require('../test-utils');
 
 describe('Server Path: /', () => {
-  const newVideo =  { title: 'Funny Video', description: 'what a funny video!' };
+  const newVideo =  { title: 'Funny Video', description: 'what a funny video!', videoUrl: 'http://example.com' };
 
   beforeEach(connectDatabase);
 
@@ -20,7 +20,6 @@ describe('Server Path: /', () => {
       const video = Video.create(newVideo);
       const response = await request(app)
         .get('/');
-
       assert.include(parseTextFromHTML(response.text, '.video-title'), newVideo.title);
       assert.include(parseTextFromHTML(response.text, '.video-description'), newVideo.description);
     });
